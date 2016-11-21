@@ -1,5 +1,7 @@
 'use strict';
 
 module.exports = {
-  name: 'first.js'
+  example: 'components',
+  component: 'first.js',
+  data: 'I live inside examples/components/first.js'
 };
