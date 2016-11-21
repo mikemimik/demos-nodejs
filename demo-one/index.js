@@ -1,3 +1,5 @@
 'use strict';
 
-const http = require('http');
+const examples = require('./examples');
+
+console.log('examples:', examples);
