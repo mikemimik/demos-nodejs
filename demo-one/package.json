@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "description": "demo: file system and requiring - magic",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "Michael Perrotte <mike@mikecorp.ca>",
   "license": "ISC"
