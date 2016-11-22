@@ -1,5 +1,5 @@
 'use strict';
 
-const examples = require('./examples');
+const examples = require('../examples');
 
 console.log('examples:', examples);
