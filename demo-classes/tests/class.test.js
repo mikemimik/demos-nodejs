@@ -4,6 +4,14 @@ const test = require('blue-tape');
 
 const Klass = require('../klass.js');
 
+test('Class Module', (t) => {
+  t.equals(
+    'function',
+    typeof Klass,
+    'should export a function',
+  );
+});
+
 test('Class Constructor', (t) => {
   const fixture = {
     name: 'First Object',
@@ -35,13 +43,13 @@ test('Class Constructor', (t) => {
 test('Class Methods', (t) => {
   t.notEqual(
     undefined,
-    Klass.getSource,
-    'should have class function called "getSource"',
+    Klass.toJSON,
+    'should have class function called "toJSON"',
   );
 
   t.equal(
     'function',
-    typeof Klass.getSource,
-    'should have class property "getSource" as function',
+    typeof Klass.toJSON,
+    'should have class property "toJSON" as function',
   );
 });
