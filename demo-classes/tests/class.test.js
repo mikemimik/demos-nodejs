@@ -32,13 +32,23 @@ test('Class Constructor', (t) => {
     'should throw if missing options param',
   );
 
-  Object.keys(fixture).forEach((key) => {
-    t.throws(
-      () => new Klass(_.omit(fixture, key)),
-      new RegExp(`missing.option.${key.toUpperCase()}`),
-      `should throw if missing ${key} option`,
-    );
-  });
+  t.throws(
+    () => new Klass(_.omit(fixture, ['name'])),
+    /missing.option.NAME/,
+    'should throw if missing NAME option',
+  );
+
+  t.throws(
+    () => new Klass(_.omit(fixture, ['type'])),
+    /missing.option.TYPE/,
+    'should throw if missing TYPE option',
+  );
+
+  t.throws(
+    () => new Klass(_.omit(fixture, ['description'])),
+    /missing.option.DESCRIPTION/,
+    `should throw if missing DESCRIPTION option`,
+  );
 
   t.end();
 });
@@ -54,6 +64,29 @@ test('Class Methods', (t) => {
     'function',
     typeof Klass.toJSON,
     'should have class property "toJSON" as function',
+  );
+
+  t.end();
+});
+
+test('Instance Methods', (t) => {
+  const options = {
+    name: 'testing',
+    type: 1,
+    description: 'hello world',
+  };
+  const klass = new Klass(options);
+
+  t.notEqual(
+    undefined,
+    klass.getType,
+    'should have an instance method called "getType"',
+  );
+
+  t.equal(
+    'function',
+    typeof klass.getType,
+    'should have an instance property "getType" as function',
   );
 
   t.end();
