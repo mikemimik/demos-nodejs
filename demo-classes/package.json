@@ -1,0 +1,22 @@
+{
+  "name": "demo-classes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "tape tests/**/*.test.js"
+  },
+  "keywords": [],
+  "author": "Michael Perrotte",
+  "license": "MIT",
+  "devDependencies": {
+    "blue-tape": "^1.0.0",
+    "semistandard": "github:mikemimik/semistandard"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
