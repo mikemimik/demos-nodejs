@@ -1,6 +1,7 @@
 'use strict';
 
 const test = require('blue-tape');
+const _ = require('lodash');
 
 const Klass = require('../klass.js');
 
@@ -10,6 +11,8 @@ test('Class Module', (t) => {
     typeof Klass,
     'should export a function',
   );
+
+  t.end();
 });
 
 test('Class Constructor', (t) => {
@@ -32,7 +35,7 @@ test('Class Constructor', (t) => {
   Object.keys(fixture).forEach((key) => {
     t.throws(
       () => new Klass(_.omit(fixture, key)),
-      new RegExp(`missing.option.${key.toUpperCase}`),
+      new RegExp(`missing.option.${key.toUpperCase()}`),
       `should throw if missing ${key} option`,
     );
   });
@@ -52,4 +55,6 @@ test('Class Methods', (t) => {
     typeof Klass.toJSON,
     'should have class property "toJSON" as function',
   );
+
+  t.end();
 });
